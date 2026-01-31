@@ -9,14 +9,15 @@ jQuery(document).ready(function($) {
     $('.ife-register-btn').on('click', function(e) {
         e.preventDefault();
         
-        const $btn = $(this);
-        const eventId = $btn.data('event-id');
-        const status = 'joining';
-        const joinStopId = $('#ife_join_stop').val();
+        var $btn = $(this);
+        var eventId = $btn.data('event-id');
+        var joinStopId = $('#ife_join_stop').val();
         
         if (!confirm(ifeData.strings.confirmJoin || 'Are you sure you want to join this event?')) {
             return;
         }
+        
+        $btn.prop('disabled', true).text('Processing...');
         
         $.ajax({
             url: ifeData.ajaxUrl,
@@ -25,11 +26,8 @@ jQuery(document).ready(function($) {
                 action: 'ife_register_event',
                 nonce: ifeData.nonce,
                 event_id: eventId,
-                status: status,
+                status: 'joining',
                 join_stop_id: joinStopId
-            },
-            beforeSend: function() {
-                $btn.prop('disabled', true).text('Processing...');
             },
             success: function(response) {
                 if (response.success) {
@@ -51,12 +49,14 @@ jQuery(document).ready(function($) {
     $('.ife-unregister-btn').on('click', function(e) {
         e.preventDefault();
         
-        const $btn = $(this);
-        const eventId = $btn.data('event-id');
+        var $btn = $(this);
+        var eventId = $btn.data('event-id');
         
         if (!confirm(ifeData.strings.confirmLeave || 'Are you sure you want to leave this event?')) {
             return;
         }
+        
+        $btn.prop('disabled', true).text('Processing...');
         
         $.ajax({
             url: ifeData.ajaxUrl,
@@ -65,9 +65,6 @@ jQuery(document).ready(function($) {
                 action: 'ife_unregister_event',
                 nonce: ifeData.nonce,
                 event_id: eventId
-            },
-            beforeSend: function() {
-                $btn.prop('disabled', true).text('Processing...');
             },
             success: function(response) {
                 if (response.success) {
