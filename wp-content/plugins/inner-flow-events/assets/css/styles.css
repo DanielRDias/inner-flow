@@ -1,0 +1,334 @@
+/* Frontend Styles for Inner Flow Events */
+
+.ife-event-single {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.ife-event-header {
+    background: linear-gradient(135deg, #2C5F8D 0%, #3A7D44 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.ife-event-title {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.ife-event-meta {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.ife-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ife-meta-item i {
+    font-size: 1.2em;
+}
+
+.ife-event-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+#ife-event-map {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+.ife-route-info {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.ife-route-info h3 {
+    color: #2C5F8D;
+    margin-bottom: 15px;
+}
+
+.ife-stop-points-list {
+    margin-top: 20px;
+}
+
+.ife-stop-item {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #3A7D44;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.ife-stop-number {
+    background: #3A7D44;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.ife-stop-name {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.ife-stop-time {
+    color: #2C5F8D;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.ife-stop-description {
+    color: #666;
+    line-height: 1.6;
+}
+
+.ife-registration-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.ife-registration-section h3 {
+    color: #2C5F8D;
+    margin-bottom: 20px;
+}
+
+.ife-registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ife-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ife-form-group label {
+    font-weight: 600;
+    color: #333;
+}
+
+.ife-form-group select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.ife-register-btn,
+.ife-unregister-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ife-register-btn {
+    background: #3A7D44;
+    color: white;
+}
+
+.ife-register-btn:hover {
+    background: #5FA869;
+}
+
+.ife-unregister-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.ife-unregister-btn:hover {
+    background: #c82333;
+}
+
+.ife-participants-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.ife-participants-section h3 {
+    color: #2C5F8D;
+    margin-bottom: 20px;
+}
+
+#ife-participants-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.ife-participant {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.ife-participant-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.ife-participant-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ife-participant-status {
+    font-size: 0.9em;
+    padding: 3px 10px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.ife-participant-status.joining {
+    background: #d4edda;
+    color: #155724;
+}
+
+.ife-participant-status.not_joining {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.ife-difficulty-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.ife-difficulty-badge.easy {
+    background: #d4edda;
+    color: #155724;
+}
+
+.ife-difficulty-badge.moderate {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.ife-difficulty-badge.hard {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.ife-difficulty-badge.expert {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+/* Participants grouped by starting point */
+.ife-participants-summary {
+    background: linear-gradient(135deg, #2C5F8D, #6FB98F);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.ife-participant-group {
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border: 1px solid #e9ecef;
+}
+
+.ife-group-header {
+    background: linear-gradient(135deg, #6FB98F, #5FA869);
+    color: white;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.ife-group-name {
+    font-size: 1em;
+}
+
+.ife-group-count {
+    background: rgba(255,255,255,0.2);
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+}
+
+.ife-group-participants {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.ife-group-participants .ife-participant {
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .ife-event-header {
+        padding: 20px;
+    }
+    
+    .ife-event-title {
+        font-size: 1.8em;
+    }
+    
+    .ife-event-meta {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    #ife-event-map {
+        height: 300px;
+    }
+    
+    #ife-participants-list {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,105 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Inner Flow\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-26 12:00+0000\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Welcome to Inner Flow"
+msgstr "Welcome to Inner Flow"
+
+msgid "Discover amazing hiking experiences"
+msgstr "Discover amazing hiking experiences"
+
+msgid "View Details"
+msgstr "View Details"
+
+msgid "No posts found."
+msgstr "No posts found."
+
+msgid "Primary Menu"
+msgstr "Primary Menu"
+
+msgid "Footer Menu"
+msgstr "Footer Menu"
+
+msgid "All rights reserved."
+msgstr "All rights reserved."
+
+msgid "Login with your Google account to register for hiking events."
+msgstr "Login with your Google account to register for hiking events."
+
+msgid "Add widgets here."
+msgstr "Add widgets here."
+
+msgid "Sidebar"
+msgstr "Sidebar"
+
+msgid "Hiking Events"
+msgstr "Hiking Events"
+
+msgid "Event"
+msgstr "Event"
+
+msgid "Add New Event"
+msgstr "Add New Event"
+
+msgid "Edit Event"
+msgstr "Edit Event"
+
+msgid "New Event"
+msgstr "New Event"
+
+msgid "View Event"
+msgstr "View Event"
+
+msgid "Search Events"
+msgstr "Search Events"
+
+msgid "No events found."
+msgstr "No events found."
+
+msgid "Event Date & Time"
+msgstr "Event Date & Time"
+
+msgid "Event Location"
+msgstr "Event Location"
+
+msgid "Route Details"
+msgstr "Route Details"
+
+msgid "Stop Points"
+msgstr "Stop Points"
+
+msgid "Add Stop Point"
+msgstr "Add Stop Point"
+
+msgid "Stop Name"
+msgstr "Stop Name"
+
+msgid "Stop Time"
+msgstr "Stop Time"
+
+msgid "Stop Description"
+msgstr "Stop Description"
+
+msgid "Register for Event"
+msgstr "Register for Event"
+
+msgid "I will join"
+msgstr "I will join"
+
+msgid "I won't join"
+msgstr "I won't join"
+
+msgid "Join at stop:"
+msgstr "Join at stop:"
+
+msgid "Participants"
+msgstr "Participants"
+
+msgid "Event Details"
+msgstr "Event Details"

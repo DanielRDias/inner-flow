@@ -1,0 +1,308 @@
+/*
+Theme Name: Inner Flow
+Theme URI: https://innerflow.com
+Description: A bilingual WordPress theme for hiking events with blue and green color scheme
+Version: 1.0
+Author: Inner Flow Team
+Text Domain: inner-flow
+*/
+
+:root {
+    --primary-blue: #2C5F8D;
+    --secondary-blue: #4A90C9;
+    --light-blue: #7DB3D5;
+    --primary-green: #3A7D44;
+    --secondary-green: #5FA869;
+    --light-green: #8BC68F;
+    --white: #FFFFFF;
+    --light-gray: #F5F5F5;
+    --dark-gray: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+    color: var(--white);
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .site-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.language-switcher a {
+    padding: 5px 15px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.language-switcher a:hover,
+.language-switcher a.active {
+    background: rgba(255,255,255,0.3);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #7DB3D5 0%, #8BC68F 100%);
+    padding: 60px 20px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #2C5F8D;
+}
+
+.hero-subtitle {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    color: #3A7D44;
+    font-weight: 600;
+}
+
+.hero-description {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Main Content */
+main {
+    padding: 40px 0;
+    min-height: 60vh;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--secondary-blue);
+}
+
+.btn-success {
+    background: var(--primary-green);
+    color: var(--white);
+}
+
+.btn-success:hover {
+    background: var(--secondary-green);
+}
+
+/* Event Cards */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.event-card {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.event-card-header {
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--light-green) 100%);
+    padding: 20px;
+    color: var(--dark-gray);
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+}
+
+.event-card-body {
+    padding: 20px;
+}
+
+.event-date {
+    font-size: 0.9em;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.event-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--primary-green);
+}
+
+.event-location {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.event-difficulty {
+    margin-bottom: 15px;
+}
+
+.event-description {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.event-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.participant-count {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.ife-difficulty-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.ife-difficulty-badge.easy {
+    background: #d4edda;
+    color: #155724;
+}
+
+.ife-difficulty-badge.moderate {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.ife-difficulty-badge.hard {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.ife-difficulty-badge.expert {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-gray);
+    color: var(--white);
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Additional Styles */
+.page-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--light-green) 100%);
+    border-radius: 10px;
+}
+
+.page-header h1 {
+    font-size: 2.5em;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 1.1em;
+    color: var(--dark-gray);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    header .site-title {
+        font-size: 2em;
+    }
+    
+    .hero-section h1 {
+        font-size: 2em;
+    }
+}

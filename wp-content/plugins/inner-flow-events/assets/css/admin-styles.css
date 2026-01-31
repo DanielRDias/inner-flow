@@ -1,0 +1,91 @@
+/* Admin Styles for Inner Flow Events */
+
+.ife-meta-box p {
+    margin-bottom: 15px;
+}
+
+.ife-meta-box label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #23282d;
+}
+
+#ife_map {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.ife-route-meta-box {
+    padding: 10px 0;
+}
+
+.ife-stop-point {
+    background: #f5f5f5;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #2C5F8D;
+}
+
+.ife-stop-point h4 {
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+}
+
+.ife-stop-point h4::before {
+    content: '≡';
+    margin-right: 10px;
+    color: #999;
+}
+
+.ife-stop-point label {
+    display: inline-block;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.ife-stop-point input[type="text"],
+.ife-stop-point input[type="time"],
+.ife-stop-point input[type="number"],
+.ife-stop-point textarea {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.ife-remove-stop {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.ife-remove-stop:hover {
+    background: #c82333;
+}
+
+#ife_add_stop {
+    background: #3A7D44;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#ife_add_stop:hover {
+    background: #5FA869;
+}
+
+.ui-sortable-helper {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
