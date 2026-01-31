@@ -17,12 +17,21 @@ $events_query = new WP_Query(array(
     <div class="container">
         <h1><?php _e('Welcome to Inner Flow', 'inner-flow'); ?></h1>
         <p class="hero-subtitle"><?php _e('Bem-vindo ao Inner Flow', 'inner-flow'); ?></p>
-        <p class="hero-description"><?php _e('Join our hiking community and explore beautiful trails together!', 'inner-flow'); ?></p>
+        <p class="hero-description"><?php _e('Discover the beauty of nature through our guided hiking experiences. Join our community of outdoor enthusiasts and explore beautiful trails together!', 'inner-flow'); ?></p>
+        <div class="hero-cta">
+            <a href="#events" class="btn btn-primary"><?php _e('Explore Events', 'inner-flow'); ?></a>
+            <?php if (!is_user_logged_in()) : ?>
+                <a href="<?php echo wp_login_url(); ?>" class="btn btn-success"><?php _e('Join Us', 'inner-flow'); ?></a>
+            <?php endif; ?>
+        </div>
     </div>
 </section>
 
-<main class="container">
-    <h2 style="margin: 40px 0 20px 0; color: #2C5F8D; font-size: 2em;"><?php _e('Upcoming Hiking Events / Próximas Caminhadas', 'inner-flow'); ?></h2>
+<main class="container" id="events">
+    <div style="text-align: center; margin-bottom: 50px;">
+        <h2 class="section-title"><?php _e('Upcoming Hiking Events', 'inner-flow'); ?></h2>
+        <p class="section-subtitle"><?php _e('Próximas Caminhadas', 'inner-flow'); ?></p>
+    </div>
 
     <?php if ($events_query->have_posts()) : ?>
         <div class="events-grid">
@@ -43,7 +52,7 @@ $events_query = new WP_Query(array(
                         <?php if (has_post_thumbnail()) : ?>
                             <?php the_post_thumbnail('medium'); ?>
                         <?php else: ?>
-                            <div style="font-size: 4em; text-align: center; padding: 20px;">🏔️</div>
+                            <span style="font-size: 3.5em;">🏔️</span>
                         <?php endif; ?>
                     </div>
                     <div class="event-card-body">
@@ -51,7 +60,7 @@ $events_query = new WP_Query(array(
                             <div class="event-date">
                                 📅 <?php echo date_i18n(get_option('date_format'), strtotime($event_date)); ?>
                                 <?php if ($event_time) : ?>
-                                    | 🕐 <?php echo esc_html($event_time); ?>
+                                    &nbsp;•&nbsp; 🕐 <?php echo esc_html($event_time); ?>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -83,7 +92,7 @@ $events_query = new WP_Query(array(
                                 👥 <?php printf(__('%d participants', 'inner-flow'), $participant_count); ?>
                             </span>
                             
-                            <a href="<?php the_permalink(); ?>" class="btn btn-primary">
+                            <a href="<?php the_permalink(); ?>" class="btn btn-primary btn-sm">
                                 <?php _e('View Details', 'inner-flow'); ?>
                             </a>
                         </div>
@@ -95,10 +104,9 @@ $events_query = new WP_Query(array(
         <?php wp_reset_postdata(); ?>
         
     <?php else : ?>
-        <div style="text-align: center; padding: 60px 20px; background: #f5f5f5; border-radius: 10px;">
-            <p style="font-size: 1.2em; color: #666; margin-bottom: 20px;">
-                <?php _e('No upcoming hiking events yet.', 'inner-flow'); ?>
-            </p>
+        <div class="empty-state">
+            <div class="empty-state-icon">🥾</div>
+            <p><?php _e('No upcoming hiking events yet. Stay tuned for new adventures!', 'inner-flow'); ?></p>
             <?php if (current_user_can('edit_posts')) : ?>
                 <a href="<?php echo admin_url('post-new.php?post_type=hiking_event'); ?>" class="btn btn-success">
                     <?php _e('Create Your First Event', 'inner-flow'); ?>

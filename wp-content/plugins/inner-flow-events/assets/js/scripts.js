@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
         const status = 'joining';
         const joinStopId = $('#ife_join_stop').val();
         
-        if (!confirm(ifeData.strings.confirmJoin)) {
+        if (!confirm(ifeData.strings.confirmJoin || 'Are you sure you want to join this event?')) {
             return;
         }
         
@@ -33,17 +33,16 @@ jQuery(document).ready(function($) {
             },
             success: function(response) {
                 if (response.success) {
-                    alert(response.data.message);
-                    location.reload();
+                    alert(response.data.message || 'Registration successful!');
+                    window.location.reload();
                 } else {
-                    alert(response.data.message);
+                    alert(response.data.message || 'Registration failed.');
+                    $btn.prop('disabled', false).text('Register for Event');
                 }
             },
             error: function() {
                 alert('An error occurred. Please try again.');
-            },
-            complete: function() {
-                $btn.prop('disabled', false).text('Register');
+                $btn.prop('disabled', false).text('Register for Event');
             }
         });
     });
@@ -55,7 +54,7 @@ jQuery(document).ready(function($) {
         const $btn = $(this);
         const eventId = $btn.data('event-id');
         
-        if (!confirm(ifeData.strings.confirmLeave)) {
+        if (!confirm(ifeData.strings.confirmLeave || 'Are you sure you want to leave this event?')) {
             return;
         }
         
@@ -72,16 +71,15 @@ jQuery(document).ready(function($) {
             },
             success: function(response) {
                 if (response.success) {
-                    alert(response.data.message);
-                    location.reload();
+                    alert(response.data.message || 'Unregistered successfully.');
+                    window.location.reload();
                 } else {
-                    alert(response.data.message);
+                    alert(response.data.message || 'Failed to unregister.');
+                    $btn.prop('disabled', false).text('Unregister');
                 }
             },
             error: function() {
                 alert('An error occurred. Please try again.');
-            },
-            complete: function() {
                 $btn.prop('disabled', false).text('Unregister');
             }
         });

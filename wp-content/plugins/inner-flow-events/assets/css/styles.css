@@ -1,153 +1,446 @@
 /* Frontend Styles for Inner Flow Events */
 
+:root {
+    --ife-primary-blue: #2C5F8D;
+    --ife-secondary-blue: #4A90C9;
+    --ife-primary-green: #3A7D44;
+    --ife-secondary-green: #5FA869;
+    --ife-white: #FFFFFF;
+    --ife-light-gray: #F8F9FA;
+    --ife-dark-gray: #2D3436;
+    --ife-text-gray: #636E72;
+    --ife-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    --ife-radius: 16px;
+}
+
 .ife-event-single {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 .ife-event-header {
-    background: linear-gradient(135deg, #2C5F8D 0%, #3A7D44 100%);
+    background: linear-gradient(135deg, var(--ife-primary-blue) 0%, var(--ife-primary-green) 100%);
     color: white;
-    padding: 40px;
-    border-radius: 10px;
-    margin-bottom: 30px;
+    padding: 50px 40px;
+    border-radius: var(--ife-radius);
+    margin-bottom: 40px;
+    box-shadow: var(--ife-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.ife-event-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 .ife-event-title {
-    font-size: 2.5em;
-    margin-bottom: 15px;
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    line-height: 1.2;
+    position: relative;
 }
 
 .ife-event-meta {
     display: flex;
-    gap: 30px;
+    gap: 25px;
     flex-wrap: wrap;
-    margin-top: 20px;
+    position: relative;
 }
 
 .ife-meta-item {
     display: flex;
     align-items: center;
     gap: 10px;
+    background: rgba(255,255,255,0.15);
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-size: 0.95em;
 }
 
 .ife-meta-item i {
-    font-size: 1.2em;
+    font-size: 1.1em;
+}
+
+.ife-meta-item strong {
+    font-weight: 600;
 }
 
 .ife-event-content {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: var(--ife-white);
+    padding: 40px;
+    border-radius: var(--ife-radius);
+    box-shadow: var(--ife-shadow);
     margin-bottom: 30px;
+    font-size: 1.05em;
+    line-height: 1.8;
+}
+
+.ife-event-content p {
+    margin-bottom: 1.5em;
+}
+
+.ife-event-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Map Embed */
+.ife-event-map-embed {
+    background: var(--ife-white);
+    padding: 30px;
+    border-radius: var(--ife-radius);
+    box-shadow: var(--ife-shadow);
+    margin-bottom: 30px;
+}
+
+.ife-event-map-embed h3 {
+    color: var(--ife-primary-blue);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.ife-event-map-embed iframe {
+    border-radius: 12px !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 #ife-event-map {
     width: 100%;
-    height: 500px;
-    border-radius: 10px;
+    height: 450px;
+    border-radius: 12px;
     margin: 30px 0;
+    box-shadow: var(--ife-shadow);
 }
 
+/* Route Info */
 .ife-route-info {
-    background: #f5f5f5;
-    padding: 20px;
-    border-radius: 10px;
+    background: var(--ife-white);
+    padding: 35px;
+    border-radius: var(--ife-radius);
     margin-bottom: 30px;
+    box-shadow: var(--ife-shadow);
 }
 
 .ife-route-info h3 {
-    color: #2C5F8D;
-    margin-bottom: 15px;
+    color: var(--ife-primary-blue);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-family: 'Playfair Display', Georgia, serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ife-route-info h3::before {
+    content: '🗺️';
 }
 
 .ife-stop-points-list {
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .ife-stop-item {
-    background: white;
-    padding: 20px;
+    background: var(--ife-light-gray);
+    padding: 25px;
     margin-bottom: 15px;
-    border-radius: 8px;
-    border-left: 4px solid #3A7D44;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    border-left: 5px solid var(--ife-primary-green);
+    transition: all 0.3s ease;
+}
+
+.ife-stop-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.ife-stop-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
 }
 
 .ife-stop-number {
-    background: #3A7D44;
+    background: linear-gradient(135deg, var(--ife-primary-green) 0%, var(--ife-secondary-green) 100%);
     color: white;
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    margin-right: 10px;
+    margin-right: 15px;
+    font-size: 0.95em;
+    box-shadow: 0 2px 8px rgba(58, 125, 68, 0.3);
 }
 
 .ife-stop-name {
-    font-size: 1.2em;
+    font-size: 1.25em;
     font-weight: 600;
-    color: #333;
-    margin-bottom: 5px;
+    color: var(--ife-dark-gray);
 }
 
 .ife-stop-time {
-    color: #2C5F8D;
+    color: var(--ife-primary-blue);
     font-weight: 600;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95em;
 }
 
 .ife-stop-description {
-    color: #666;
-    line-height: 1.6;
+    color: var(--ife-text-gray);
+    line-height: 1.7;
 }
 
+/* Registration Section */
 .ife-registration-section {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: var(--ife-white);
+    padding: 35px;
+    border-radius: var(--ife-radius);
+    box-shadow: var(--ife-shadow);
     margin-bottom: 30px;
 }
 
 .ife-registration-section h3 {
-    color: #2C5F8D;
-    margin-bottom: 20px;
+    color: var(--ife-primary-blue);
+    margin-bottom: 25px;
+    font-size: 1.5em;
+    font-family: 'Playfair Display', Georgia, serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ife-registration-section h3::before {
+    content: '✍️';
 }
 
 .ife-registration-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 .ife-form-group {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
 }
 
 .ife-form-group label {
     font-weight: 600;
-    color: #333;
+    color: var(--ife-dark-gray);
+    font-size: 0.95em;
 }
 
 .ife-form-group select {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 14px 18px;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
     font-size: 1em;
+    transition: all 0.3s ease;
+    background: var(--ife-white);
+}
+
+.ife-form-group select:focus {
+    border-color: var(--ife-primary-blue);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(44, 95, 141, 0.1);
 }
 
 .ife-register-btn,
 .ife-unregister-btn {
-    padding: 15px 30px;
+    padding: 16px 32px;
     border: none;
+    border-radius: 10px;
+    font-size: 1.05em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ife-register-btn {
+    background: linear-gradient(135deg, var(--ife-primary-green) 0%, var(--ife-secondary-green) 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(58, 125, 68, 0.3);
+}
+
+.ife-register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(58, 125, 68, 0.4);
+}
+
+.ife-unregister-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.ife-unregister-btn:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Registered Status */
+.ife-registration-section .registered-status {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.ife-registration-section .registered-status p {
+    color: #155724;
+    margin-bottom: 8px;
+}
+
+.ife-registration-section .registered-status p:last-child {
+    margin-bottom: 0;
+}
+
+/* Participants Section */
+.ife-participants-section {
+    background: var(--ife-white);
+    padding: 35px;
+    border-radius: var(--ife-radius);
+    box-shadow: var(--ife-shadow);
+}
+
+.ife-participants-section h3 {
+    color: var(--ife-primary-blue);
+    margin-bottom: 25px;
+    font-size: 1.5em;
+    font-family: 'Playfair Display', Georgia, serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ife-participants-section h3::before {
+    content: '👥';
+}
+
+#ife-participants-list {
+    display: grid;
+    gap: 12px;
+}
+
+.participant-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--ife-light-gray);
+    border-radius: 10px;
+}
+
+.participant-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--ife-primary-blue) 0%, var(--ife-primary-green) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+}
+
+.participant-name {
+    font-weight: 500;
+    color: var(--ife-dark-gray);
+}
+
+.participant-join-point {
+    font-size: 0.85em;
+    color: var(--ife-text-gray);
+    margin-left: auto;
+}
+
+/* Difficulty Badge Override */
+.ife-difficulty-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ife-difficulty-badge.easy {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+}
+
+.ife-difficulty-badge.moderate {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%);
+    color: #856404;
+}
+
+.ife-difficulty-badge.hard {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+}
+
+.ife-difficulty-badge.expert {
+    background: linear-gradient(135deg, #cce5ff 0%, #b8daff 100%);
+    color: #004085;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ife-event-single {
+        padding: 20px 15px;
+    }
+    
+    .ife-event-header {
+        padding: 35px 25px;
+    }
+    
+    .ife-event-title {
+        font-size: 2em;
+    }
+    
+    .ife-event-meta {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .ife-meta-item {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .ife-event-content,
+    .ife-route-info,
+    .ife-registration-section,
+    .ife-participants-section,
+    .ife-event-map-embed {
+        padding: 25px 20px;
+    }
+    
+    .ife-stop-item {
+        padding: 20px;
+    }
+}
     border-radius: 5px;
     font-size: 1.1em;
     font-weight: 600;
@@ -330,5 +623,191 @@
     
     #ife-participants-list {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   CUSTOM MODAL STYLES
+   ======================================== */
+.ife-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 20px;
+}
+
+.ife-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ife-modal {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8) translateY(20px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ife-modal.active {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.ife-modal-icon {
+    font-size: 4em;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.ife-modal-title {
+    font-size: 1.5em;
+    color: #2D3436;
+    margin-bottom: 12px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+}
+
+.ife-modal-message {
+    color: #636E72;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.ife-modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.ife-modal-btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.ife-modal-cancel {
+    background: #E9ECEF;
+    color: #636E72;
+}
+
+.ife-modal-cancel:hover {
+    background: #DEE2E6;
+    transform: translateY(-2px);
+}
+
+.ife-modal-confirm.ife-btn-success {
+    background: linear-gradient(135deg, #3A7D44 0%, #5FA869 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(58, 125, 68, 0.3);
+}
+
+.ife-modal-confirm.ife-btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(58, 125, 68, 0.4);
+}
+
+.ife-modal-confirm.ife-btn-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #e4606d 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.ife-modal-confirm.ife-btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+}
+
+/* Modal type variations */
+.ife-modal.ife-modal-success .ife-modal-icon {
+    animation: bounceIn 0.6s ease;
+}
+
+.ife-modal.ife-modal-error .ife-modal-icon {
+    animation: shake 0.6s ease;
+}
+
+.ife-modal.ife-modal-warning .ife-modal-icon {
+    animation: pulse 1s ease infinite;
+}
+
+/* Loading spinner */
+.ife-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.8s linear infinite;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Animations */
+@keyframes bounceIn {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Modal responsive */
+@media (max-width: 480px) {
+    .ife-modal {
+        padding: 30px 25px;
+        margin: 10px;
+    }
+    
+    .ife-modal-icon {
+        font-size: 3em;
+    }
+    
+    .ife-modal-title {
+        font-size: 1.3em;
+    }
+    
+    .ife-modal-actions {
+        flex-direction: column;
+    }
+    
+    .ife-modal-btn {
+        width: 100%;
     }
 }
