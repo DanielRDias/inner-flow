@@ -100,21 +100,27 @@ jQuery(document).ready(function($) {
                     <textarea name="ife_stops[${stopCounter}][description]" rows="3" style="width: 100%;"></textarea>
                 </p>
                 
-                <p>
-                    <label>Stop Time:</label>
-                    <input type="time" name="ife_stops[${stopCounter}][time]" value="" style="width: 48%; margin-right: 4%;">
-                    
-                    <label>Duration (minutes):</label>
-                    <input type="number" name="ife_stops[${stopCounter}][duration]" value="" min="0" style="width: 48%;">
-                </p>
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <div style="flex: 1;">
+                        <label style="display: block; margin-bottom: 5px;">Stop Time:</label>
+                        <input type="time" name="ife_stops[${stopCounter}][time]" value="" style="width: 100%;">
+                    </div>
+                    <div style="flex: 1;">
+                        <label style="display: block; margin-bottom: 5px;">Duration (minutes):</label>
+                        <input type="number" name="ife_stops[${stopCounter}][duration]" value="" min="0" style="width: 100%;">
+                    </div>
+                </div>
                 
-                <p>
-                    <label>Latitude:</label>
-                    <input type="text" name="ife_stops[${stopCounter}][latitude]" value="" class="ife-stop-lat" style="width: 48%; margin-right: 4%;">
-                    
-                    <label>Longitude:</label>
-                    <input type="text" name="ife_stops[${stopCounter}][longitude]" value="" class="ife-stop-lng" style="width: 48%;">
-                </p>
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <div style="flex: 1;">
+                        <label style="display: block; margin-bottom: 5px;">Latitude:</label>
+                        <input type="text" name="ife_stops[${stopCounter}][latitude]" value="" class="ife-stop-lat" style="width: 100%;">
+                    </div>
+                    <div style="flex: 1;">
+                        <label style="display: block; margin-bottom: 5px;">Longitude:</label>
+                        <input type="text" name="ife_stops[${stopCounter}][longitude]" value="" class="ife-stop-lng" style="width: 100%;">
+                    </div>
+                </div>
                 
                 <input type="hidden" name="ife_stops[${stopCounter}][order]" value="${stopCounter}" class="ife-stop-order">
                 <hr>
