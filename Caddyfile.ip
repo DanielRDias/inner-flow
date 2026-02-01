@@ -1,0 +1,21 @@
+# Testing with IP Address (No Domain)
+
+# Use this Caddyfile if you want to test with just the IP address
+# before setting up a domain
+
+http://2.204.238.221 {
+    reverse_proxy wordpress:80
+    
+    # Logging
+    log {
+        output file /var/log/caddy/access.log
+    }
+
+    # Enable gzip compression
+    encode gzip
+}
+
+# phpMyAdmin access (uncomment if needed)
+# http://2.204.238.221:8081 {
+#     reverse_proxy phpmyadmin:80
+# }

@@ -1,11 +1,25 @@
 version: '3.8'
 
 services:
+  caddy:
+    image: caddy:latest
+    container_name: inner-flow-caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - wordpress
+    restart: always
+
   wordpress:
     image: wordpress:latest
     container_name: inner-flow-wordpress
-    ports:
-      - "8080:80"
+    expose:
+      - "80"
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
@@ -35,8 +49,8 @@ services:
   phpmyadmin:
     image: phpmyadmin:latest
     container_name: inner-flow-phpmyadmin
-    ports:
-      - "8081:80"
+    expose:
+      - "80"
     environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: rootpassword
@@ -47,3 +61,5 @@ services:
 volumes:
   db_data:
   wordpress_data:
+  caddy_data:
+  caddy_config:

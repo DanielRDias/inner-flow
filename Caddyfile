@@ -1,0 +1,41 @@
+# Caddyfile for Inner Flow WordPress
+
+# Replace YOUR_DOMAIN.com with your actual domain
+# For testing with IP only, use: http://YOUR_DROPLET_IP
+YOUR_DOMAIN.com {
+    # Automatic HTTPS
+    # For IP-only testing, change to: http://YOUR_DROPLET_IP
+    
+    # Reverse proxy to WordPress container
+    reverse_proxy wordpress:80
+
+    # Logging
+    log {
+        output file /var/log/caddy/access.log
+    }
+
+    # Enable gzip compression
+    encode gzip
+
+    # Security headers
+    header {
+        # Enable HSTS
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        # Prevent clickjacking
+        X-Frame-Options "SAMEORIGIN"
+        # Prevent MIME sniffing
+        X-Content-Type-Options "nosniff"
+        # Enable XSS protection
+        X-XSS-Protection "1; mode=block"
+    }
+}
+
+# phpMyAdmin subdomain (optional - comment out if not needed)
+# pma.YOUR_DOMAIN.com {
+#     reverse_proxy phpmyadmin:80
+#     
+#     # Basic auth for security (optional)
+#     # basicauth {
+#     #     admin $2a$14$Zkx19XLiW6VYouLHR5NmfOFU0z2GTNmpkT/5qqR7hx7wHG0rKxT2.
+#     # }
+# }
