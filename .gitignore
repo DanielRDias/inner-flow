@@ -1,0 +1,110 @@
+# WordPress Core Files
+# Ignore all core WordPress files in the root directory
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/xmlrpc.php
+/readme.html
+/license.txt
+
+# BUT keep these WordPress files we might customize
+!wp-config-sample.php
+
+# Configuration files with sensitive data
+wp-config.php
+.htaccess
+
+# WordPress Content - Uploads and Cache
+wp-content/uploads/
+wp-content/cache/
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/upgrade/
+
+# Default WordPress Themes (keep only custom theme)
+wp-content/themes/twenty*/
+wp-content/themes/index.php
+
+# Default WordPress Plugins (keep only custom plugin)
+wp-content/plugins/akismet/
+wp-content/plugins/hello.php
+wp-content/plugins/index.php
+
+# Keep only our custom files
+# These will be tracked:
+# - wp-content/themes/inner-flow/
+# - wp-content/plugins/inner-flow-events/
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# Docker volumes and data
+/wordpress_data/
+/db_data/
+/caddy_data/
+/caddy_config/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+error_log
+/logs/
+*.err
+
+# Node modules (if using npm)
+node_modules/
+npm-debug.log
+package-lock.json
+yarn.lock
+
+# Temporary files
+*.tmp
+*.bak
+*.old
+*.orig
+*.rej
+
+# Database dumps
+*.sql
+*.sql.gz
+*.sqlite
+
+# Windows PowerShell history
+.powershell_history
+
+# Backup directories
+backups/
+/backups/
+
+# ssh -i "C:\Users\Danie\.ssh\id_innerflow" wordpress_user@209.97.129.109y logs and data (already in volumes, but just in case)
+/var/log/caddy/
