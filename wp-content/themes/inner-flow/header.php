@@ -17,7 +17,6 @@
     <div class="container header-inner">
         <div class="site-branding">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="logo-link">
-                <span class="logo-icon">🏔️</span>
                 <div class="logo-text">
                     <h1 class="site-title"><?php bloginfo('name'); ?></h1>
                     <p class="site-tagline"><?php bloginfo('description'); ?></p>

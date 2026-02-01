@@ -13,20 +13,6 @@ $events_query = new WP_Query(array(
 ));
 ?>
 
-<section class="hero-section">
-    <div class="container">
-        <h1><?php _e('Welcome to Inner Flow', 'inner-flow'); ?></h1>
-        <p class="hero-subtitle"><?php _e('Bem-vindo ao Inner Flow', 'inner-flow'); ?></p>
-        <p class="hero-description"><?php _e('Discover the beauty of nature through our guided hiking experiences. Join our community of outdoor enthusiasts and explore beautiful trails together!', 'inner-flow'); ?></p>
-        <div class="hero-cta">
-            <a href="#events" class="btn btn-primary"><?php _e('Explore Events', 'inner-flow'); ?></a>
-            <?php if (!is_user_logged_in()) : ?>
-                <a href="<?php echo wp_login_url(); ?>" class="btn btn-success"><?php _e('Join Us', 'inner-flow'); ?></a>
-            <?php endif; ?>
-        </div>
-    </div>
-</section>
-
 <main class="container" id="events">
     <div style="text-align: center; margin-bottom: 50px;">
         <h2 class="section-title"><?php _e('Upcoming Hiking Events', 'inner-flow'); ?></h2>

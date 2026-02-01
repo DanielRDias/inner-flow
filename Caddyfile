@@ -1,11 +1,7 @@
-# Caddyfile for Inner Flow WordPress
+# Caddyfile for Inner Flow WordPress (Production Only)
 
-# Replace YOUR_DOMAIN.com with your actual domain
-# For testing with IP only, use: http://YOUR_DROPLET_IP
+# Production domain (auto HTTPS)
 innerflow.duckdns.org {
-    # Automatic HTTPS
-    # For IP-only testing, change to: http://YOUR_DROPLET_IP
-    
     # Reverse proxy to WordPress container
     reverse_proxy wordpress:80
 
