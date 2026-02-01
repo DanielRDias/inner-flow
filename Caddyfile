@@ -2,7 +2,7 @@
 
 # Replace YOUR_DOMAIN.com with your actual domain
 # For testing with IP only, use: http://YOUR_DROPLET_IP
-YOUR_DOMAIN.com {
+innerflow.duckdns.org {
     # Automatic HTTPS
     # For IP-only testing, change to: http://YOUR_DROPLET_IP
     
@@ -31,7 +31,7 @@ YOUR_DOMAIN.com {
 }
 
 # phpMyAdmin subdomain (optional - comment out if not needed)
-# pma.YOUR_DOMAIN.com {
+# pma.innerflow.duckdns.org {
 #     reverse_proxy phpmyadmin:80
 #     
 #     # Basic auth for security (optional)
@@ -39,3 +39,4 @@ YOUR_DOMAIN.com {
 #     #     admin $2a$14$Zkx19XLiW6VYouLHR5NmfOFU0z2GTNmpkT/5qqR7hx7wHG0rKxT2.
 #     # }
 # }
+
