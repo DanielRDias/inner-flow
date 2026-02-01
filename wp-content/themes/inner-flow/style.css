@@ -67,8 +67,10 @@ header {
     z-index: 1000;
 }
 
-body.admin-bar header {
-    top: 32px;
+@media (min-width: 769px) {
+    body.admin-bar header {
+        top: 32px;
+    }
 }
 
 .header-inner {
