@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ========================================
    HEADER STYLES
    ======================================== */
-header {
+body > header {
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
     color: var(--white);
     padding: 0;
@@ -68,7 +68,7 @@ header {
 }
 
 @media (min-width: 769px) {
-    body.admin-bar header {
+    body.admin-bar > header {
         top: 32px;
     }
 }
@@ -703,5 +703,92 @@ footer {
     
     .footer-contact p {
         justify-content: center;
+    }
+}
+/* ========================================
+   PAGE STYLES
+   ======================================== */
+.page-content {
+    padding-top: 100px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.page-body {
+    font-size: 1.05em;
+    line-height: 1.8;
+    color: var(--dark-gray);
+}
+
+.page-body p {
+    margin-bottom: 20px;
+}
+
+.page-body h2 {
+    font-size: 1.8em;
+    color: var(--primary-blue);
+    margin: 30px 0 15px 0;
+}
+
+.page-body h3 {
+    font-size: 1.4em;
+    color: var(--secondary-blue);
+    margin: 25px 0 12px 0;
+}
+
+.page-body ul,
+.page-body ol {
+    margin: 20px 0 20px 30px;
+}
+
+.page-body li {
+    margin-bottom: 10px;
+}
+
+.page-body a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.page-body a:hover {
+    color: var(--secondary-blue);
+    text-decoration: underline;
+}
+
+.page-body img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.page-links {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--medium-gray);
+}
+
+@media (max-width: 768px) {
+    .page-content {
+        padding-top: 100px;
+        padding-bottom: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .page-header h1 {
+        font-size: 1.8em;
+    }
+
+    .page-body h2 {
+        font-size: 1.5em;
+    }
+
+    .page-body h3 {
+        font-size: 1.2em;
     }
 }
