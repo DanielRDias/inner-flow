@@ -709,7 +709,7 @@ footer {
    PAGE STYLES
    ======================================== */
 .page-content {
-    padding-top: 100px;
+    padding-top: 30px;
     padding-bottom: 40px;
     padding-left: 20px;
     padding-right: 20px;
@@ -774,7 +774,7 @@ footer {
 
 @media (max-width: 768px) {
     .page-content {
-        padding-top: 100px;
+        padding-top: 30px;
         padding-bottom: 20px;
         padding-left: 15px;
         padding-right: 15px;
